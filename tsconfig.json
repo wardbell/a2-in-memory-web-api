@@ -4,7 +4,7 @@
     "module": "system",
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "./",
+    "outDir": "./a2-in-memory-web-api",
     "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -13,6 +13,7 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "a2-in-memory-web-api"
   ]
 }

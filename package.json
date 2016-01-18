@@ -1,6 +1,6 @@
 {
   "name": "a2-in-memory-web-api",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "An in-memory web api for demos and tests",
   "scripts": {
     "tsc": "tsc",
@@ -29,8 +29,14 @@
   },
   "devDependencies": {
     "concurrently": "^1.0.0",
+    "del": "^2.2.0",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
+    "gulp": "^3.9.0",
+    "gulp-bump": "^1.0.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-util": "^3.0.7",
     "http-server": "^0.8.5",
     "jasmine-core": "~2.1.0",
     "karma": "^0.12.23",
@@ -44,6 +50,7 @@
     "systemjs": "0.19.6",
     "systemjs-builder": "^0.15.3",
     "typescript": "^1.7.3",
+    "yargs": "^3.32.0",
     "zone.js": "0.5.10"
   }
 }

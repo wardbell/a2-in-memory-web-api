@@ -1,4 +1,4 @@
-System.register("http-status-codes.js", [], function(exports_1) {
+System.register("a2-in-memory-web-api/http-status-codes", [], function(exports_1) {
   var STATUS,
       STATUS_CODE_INFO;
   return {
@@ -460,7 +460,7 @@ System.register("http-status-codes.js", [], function(exports_1) {
   };
 });
 
-System.register("in-memory-backend.service.js", ["angular2/core", "angular2/http", "rxjs/Observable", "rxjs/add/operator/delay", "./http-status-codes"], function(exports_1) {
+System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/core", "angular2/http", "rxjs/Observable", "rxjs/add/operator/delay", "./http-status-codes"], function(exports_1) {
   var __decorate = (this && this.__decorate) || function(decorators, target, key, desc) {
     var c = arguments.length,
         r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
@@ -804,7 +804,7 @@ System.register("in-memory-backend.service.js", ["angular2/core", "angular2/http
   };
 });
 
-System.register("core.js", ["./http-status-codes", "./in-memory-backend.service"], function(exports_1) {
+System.register("a2-in-memory-web-api/core", ["./http-status-codes", "./in-memory-backend.service"], function(exports_1) {
   function exportStar_1(m) {
     var exports = {};
     for (var n in m) {
