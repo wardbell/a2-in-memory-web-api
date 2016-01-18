@@ -1,8 +1,8 @@
 {
-  "name": "angular2-in-memory-web-api",
-  "version": "1.0.0",
+  "name": "a2-in-memory-web-api",
+  "version": "0.0.1",
   "description": "An in-memory web api for demos and tests",
-   "scripts": {
+  "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",
@@ -14,21 +14,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wardbell/angular2-in-memory-web-api.git"
+    "url": "git+https://github.com/wardbell/a2-in-memory-web-api.git"
   },
   "keywords": [],
   "author": "Ward R. Bell",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wardbell/angular2-in-memory-web-api/issues"
+    "url": "https://github.com/wardbell/a2-in-memory-web-api/issues"
   },
-  "homepage": "https://github.com/wardbell/angular2-in-memory-web-api#readme",
+  "homepage": "https://github.com/wardbell/a2-in-memory-web-api#readme",
   "dependencies": {
     "angular2": "2.0.0-beta.0",
-     "rxjs": "5.0.0-beta.0"
+    "rxjs": "5.0.0-beta.0"
   },
   "devDependencies": {
     "concurrently": "^1.0.0",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
     "http-server": "^0.8.5",
     "jasmine-core": "~2.1.0",
     "karma": "^0.12.23",
@@ -37,14 +39,11 @@
     "karma-jasmine": "^0.3.6",
     "lite-server": "^1.3.1",
     "live-server": "^0.8.2",
+    "reflect-metadata": "0.1.2",
     "rimraf": "^2.4.3",
     "systemjs": "0.19.6",
+    "systemjs-builder": "^0.15.3",
     "typescript": "^1.7.3",
-
-    "es6-promise": "^3.0.2",
-    "es6-shim": "^0.33.3",
-    "reflect-metadata": "0.1.2",
-
     "zone.js": "0.5.10"
   }
 }
