@@ -37,6 +37,7 @@ gulp.task('tsc-only',['clean'], function(done) {
 gulp.task('clean', function(done) {
   clean([tsOutput+'*.*', '*.js','*.d.ts','!gulpfile.js'], done);
 });
+
 /**
  * Bump the version
  * --type=pre will bump the prerelease version *.*.*-x
