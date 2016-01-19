@@ -69,9 +69,6 @@ gulp.task('bump', function() {
 //////////
 
 function build(done) {
-  // optional constructor options
-  // sets the baseURL and loads the configuration file
-  //var builder = new Builder('path/to/baseURL', 'path/to/system/config-file.js');
   var builder = new Builder({
       paths: {'*': '*.js'},
       map: {
@@ -95,6 +92,7 @@ function build(done) {
     });
 
   builder
+   // start building with the root module file in the folder with the intended module name
   .bundle('a2-in-memory-web-api/core', 'dev.js')
   .then(function(output) {
     console.log('Build complete');
