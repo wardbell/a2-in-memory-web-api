@@ -1,2 +1,4 @@
 a2-in-memory-web-api
 gulpfile.js
+.gitignore
+.npmignore
