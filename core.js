@@ -1,4 +1,4 @@
-System.register(['./http-status-codes', './in-memory-backend.service'], function(exports_1) {
+System.register(['./in-memory-backend.service', './http-status-codes'], function(exports_1) {
     function exportStar_1(m) {
         var exports = {};
         for(var n in m) {
@@ -8,11 +8,11 @@ System.register(['./http-status-codes', './in-memory-backend.service'], function
     }
     return {
         setters:[
-            function (http_status_codes_1_1) {
-                exportStar_1(http_status_codes_1_1);
-            },
             function (in_memory_backend_service_1_1) {
                 exportStar_1(in_memory_backend_service_1_1);
+            },
+            function (http_status_codes_1_1) {
+                exportStar_1(http_status_codes_1_1);
             }],
         execute: function() {
         }

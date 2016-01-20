@@ -93,7 +93,7 @@ function build(done) {
 
   builder
    // start building with the root module file in the folder with the intended module name
-  .bundle('a2-in-memory-web-api/core', 'dev.js')
+  .bundle('a2-in-memory-web-api/core', 'web-api.js')
   .then(function(output) {
     console.log('Build complete');
   })
