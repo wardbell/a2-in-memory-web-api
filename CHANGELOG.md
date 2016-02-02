@@ -1,9 +1,14 @@
+<a name="0.1.1"></a>
+# 0.1.1 (2016-02-02)
+* update to Angular 2 beta 2
+* exclude tsconfig.json from the npm package
+
 <a name="0.1.0"></a>
 # 0.1.0 (2016-01-19)
 
 ### Bug Fixes
 
-* .npmignore now excluded from the npm package
+* exclude .npmignore from the npm package
 
 ### Features
 
