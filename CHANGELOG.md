@@ -1,4 +1,8 @@
 <a name="0.1.1"></a>
+# 0.1.2 (2016-02-03)
+* update to Angular 2 beta 3
+
+<a name="0.1.1"></a>
 # 0.1.1 (2016-02-02)
 * update to Angular 2 beta 2
 * exclude tsconfig.json from the npm package
