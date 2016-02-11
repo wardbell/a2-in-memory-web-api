@@ -33,8 +33,11 @@ compiling your application project.
 
 - `gulp build`
 - commit and push
+
+- `npm publish`
+
+- Fix and validate angular.io docs samples
+
 - Add two tags to the release commit with for npmcdn
   - the version number
   - 'latest'
-
-- `npm publish`
