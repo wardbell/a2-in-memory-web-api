@@ -1,6 +1,11 @@
+<a name="0.1.4"></a>
+# 0.1.4 (2016-02-11)
+* update to Angular 2 beta 6 (skip 4-5)
+
 <a name="0.1.3"></a>
 # 0.1.3 (2016-02-11)
-* update to Angular 2 beta 6 (skip 4-5)
+* update to Angular 2 beta 6 RC (skip 4-5)
+[DO NOT USE]
 
 <a name="0.1.2"></a>
 # 0.1.2 (2016-02-03)
