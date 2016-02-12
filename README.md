@@ -25,7 +25,7 @@ compiling your application project.
 
 - update the dependent version(s) in `package.json`
 
-- `npm install` the new package(s) (make sure they really do install!)
+- `npm install` the new package(s) (make sure they really do install!)<br>
    `npm list --depth=0`
 
 - `npm run typings` ... to get the current typings files
