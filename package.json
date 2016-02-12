@@ -1,9 +1,8 @@
 {
   "name": "a2-in-memory-web-api",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "An in-memory web api for demos and tests",
   "scripts": {
-    "postinstall": "npm run typings",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",

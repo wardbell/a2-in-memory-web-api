@@ -1,4 +1,8 @@
 <a name="0.1.4"></a>
+# 0.1.5 (2016-02-11)
+* remove `npm postinstall` script
+
+<a name="0.1.4"></a>
 # 0.1.4 (2016-02-11)
 * update to Angular 2 beta 6 (skip 4-5)
 
