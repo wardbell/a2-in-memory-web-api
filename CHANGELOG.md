@@ -1,4 +1,13 @@
-<a name="0.1.4"></a>
+<a name="0.1.6"></a>
+# 0.1.5 (2016-02-20)
+* update packages
+  * Angular 2 beta 7,
+  * "reflect-metadata": "0.1.2",
+  * "rxjs": "5.0.0-beta.2",
+  * "zone.js": "0.5.15"
+* npm postinstall automatically runs typings
+
+<a name="0.1.5"></a>
 # 0.1.5 (2016-02-11)
 * remove `npm postinstall` script
 

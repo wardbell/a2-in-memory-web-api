@@ -28,8 +28,6 @@ compiling your application project.
 - `npm install` the new package(s) (make sure they really do install!)<br>
    `npm list --depth=0`
 
-- `npm run typings` ... to get the current typings files
-
 - `npm run tsc` to confirm the project compiles w/o error (sanity check)
 
  -- NO TESTS YET ... BAD --

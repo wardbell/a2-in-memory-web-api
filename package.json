@@ -1,6 +1,6 @@
 {
   "name": "a2-in-memory-web-api",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "An in-memory web api for demos and tests",
   "scripts": {
     "tsc": "tsc",
@@ -11,7 +11,8 @@
     "test": "karma start karma.conf.js",
     "build-and-test": "concurrent  \"npm run tsc\" \"npm run test\"",
     "http-server": "tsc && http-server",
-    "typings": "typings install"
+    "postinstall": "typings install",
+    "typings": "typings"
   },
   "repository": {
     "type": "git",
@@ -25,10 +26,12 @@
   },
   "homepage": "https://github.com/wardbell/a2-in-memory-web-api#readme",
   "dependencies": {
-    "angular2": "2.0.0-beta.6",
+    "angular2": "2.0.0-beta.7",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.33.3",
-    "rxjs": "5.0.0-beta.0"
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.5.15"
   },
   "devDependencies": {
     "concurrently": "^1.0.0",
@@ -46,13 +49,11 @@
     "karma-jasmine": "^0.3.6",
     "lite-server": "^2.0.1",
     "live-server": "^0.9.1",
-    "reflect-metadata": "0.1.2",
     "rimraf": "^2.5.1",
     "systemjs": "0.19.20",
     "systemjs-builder": "^0.15.3",
     "typescript": "^1.7.5",
     "typings": "0.6.8",
-    "yargs": "^3.32.0",
-    "zone.js": "0.5.14"
+    "yargs": "^3.32.0"
   }
 }
