@@ -1,5 +1,9 @@
+<a name="0.1.7"></a>
+# 0.1.7 (2016-02-20)
+* **REMOVE npm postinstall .. STOP ADDING IT**
+
 <a name="0.1.6"></a>
-# 0.1.5 (2016-02-20)
+# 0.1.6 (2016-02-20)
 * update packages
   * Angular 2 beta 7,
   * "reflect-metadata": "0.1.2",

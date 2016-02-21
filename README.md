@@ -28,6 +28,10 @@ compiling your application project.
 - `npm install` the new package(s) (make sure they really do install!)<br>
    `npm list --depth=0`
 
+- `npm run typings install` after updating as necessary
+
+   NB Do not add to `npm postinstall` as that screws up consumers!
+
 - `npm run tsc` to confirm the project compiles w/o error (sanity check)
 
  -- NO TESTS YET ... BAD --

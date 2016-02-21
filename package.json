@@ -1,6 +1,6 @@
 {
   "name": "a2-in-memory-web-api",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "An in-memory web api for demos and tests",
   "scripts": {
     "tsc": "tsc",
@@ -11,7 +11,6 @@
     "test": "karma start karma.conf.js",
     "build-and-test": "concurrent  \"npm run tsc\" \"npm run test\"",
     "http-server": "tsc && http-server",
-    "postinstall": "typings install",
     "typings": "typings"
   },
   "repository": {
