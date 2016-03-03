@@ -1,4 +1,6 @@
-System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/core", "angular2/http", "rxjs/Observable", "rxjs/add/operator/delay", "./http-status-codes"], function(exports_1) {
+System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/core", "angular2/http", "rxjs/Observable", "rxjs/add/operator/delay", "./http-status-codes"], function(exports_1, context_1) {
+  "use strict";
+  var __moduleName = context_1 && context_1.id;
   var __decorate = (this && this.__decorate) || function(decorators, target, key, desc) {
     var c = arguments.length,
         r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,
@@ -52,7 +54,7 @@ System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/cor
           }, config);
         }
         return InMemoryBackendConfig;
-      })();
+      }());
       exports_1("InMemoryBackendConfig", InMemoryBackendConfig);
       exports_1("isSuccess", isSuccess = function(status) {
         return (status >= 200 && status < 300);
@@ -336,13 +338,15 @@ System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/cor
         };
         InMemoryBackendService = __decorate([__param(0, core_1.Inject(SEED_DATA)), __param(1, core_1.Inject(InMemoryBackendConfig)), __param(1, core_1.Optional()), __metadata('design:paramtypes', [Object, Object])], InMemoryBackendService);
         return InMemoryBackendService;
-      })();
+      }());
       exports_1("InMemoryBackendService", InMemoryBackendService);
     }
   };
 });
 
-System.register("a2-in-memory-web-api/http-status-codes", [], function(exports_1) {
+System.register("a2-in-memory-web-api/http-status-codes", [], function(exports_1, context_1) {
+  "use strict";
+  var __moduleName = context_1 && context_1.id;
   var STATUS,
       STATUS_CODE_INFO;
   return {
@@ -804,7 +808,9 @@ System.register("a2-in-memory-web-api/http-status-codes", [], function(exports_1
   };
 });
 
-System.register("a2-in-memory-web-api/core", ["./in-memory-backend.service", "./http-status-codes"], function(exports_1) {
+System.register("a2-in-memory-web-api/core", ["./in-memory-backend.service", "./http-status-codes"], function(exports_1, context_1) {
+  "use strict";
+  var __moduleName = context_1 && context_1.id;
   function exportStar_1(m) {
     var exports = {};
     for (var n in m) {

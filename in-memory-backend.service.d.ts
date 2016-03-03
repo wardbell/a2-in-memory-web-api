@@ -1,6 +1,7 @@
 import { OpaqueToken } from 'angular2/core';
 import { Headers, Request, Response, ResponseOptions } from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/delay';
 /**
 * Seed data for in-memory database
 * Must implement InMemoryDbService.

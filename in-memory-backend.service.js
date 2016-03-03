@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/add/operator/delay', './http-status-codes'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/add/operator/delay', './http-status-codes'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -49,7 +51,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/add/
                     }, config);
                 }
                 return InMemoryBackendConfig;
-            })();
+            }());
             exports_1("InMemoryBackendConfig", InMemoryBackendConfig);
             exports_1("isSuccess", isSuccess = function (status) { return (status >= 200 && status < 300); });
             /**
@@ -376,7 +378,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/add/
                     __metadata('design:paramtypes', [Object, Object])
                 ], InMemoryBackendService);
                 return InMemoryBackendService;
-            })();
+            }());
             exports_1("InMemoryBackendService", InMemoryBackendService);
         }
     }
