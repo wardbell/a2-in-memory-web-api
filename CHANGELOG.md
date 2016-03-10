@@ -1,3 +1,9 @@
+<a name="0.1.9"></a>
+# 0.1.8 (2016-03-09)
+* update packages
+  * Angular 2 beta 9
+  * Typings to 0.7.5 (clear your typings folder!)
+
 <a name="0.1.8"></a>
 # 0.1.8 (2016-03-03)
 * update packages
