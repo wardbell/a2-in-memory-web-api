@@ -1,5 +1,17 @@
+<a name="0.1.10"></a>
+# 0.1.10 (2016-03-17) [DO NOT USE]
+**Can't compile cleanly due to zone.d.ts problem**
+
+* update packages
+  * Angular 2 beta 10
+  * es6-shim: "0.35.0
+  * zone.js: 0.6.4
+* removed typings files from source control
+* update es6-shim typings to commit 7de6c3
+
+
 <a name="0.1.9"></a>
-# 0.1.8 (2016-03-09)
+# 0.1.9 (2016-03-09)
 * update packages
   * Angular 2 beta 9
   * Typings to 0.7.5 (clear your typings folder!)
