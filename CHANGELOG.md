@@ -1,3 +1,8 @@
+<a name="0.1.11"></a>
+# 0.1.11 (2016-03-18)
+* update packages
+  * Angular 2 beta 11
+
 <a name="0.1.10"></a>
 # 0.1.10 (2016-03-17) [DO NOT USE]
 **Can't compile cleanly due to zone.d.ts problem**

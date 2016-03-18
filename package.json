@@ -1,6 +1,6 @@
 {
   "name": "a2-in-memory-web-api",
-  "version": "0.1.9",
+  "version": "0.1.11",
   "description": "An in-memory web api for demos and tests",
   "scripts": {
     "tsc": "tsc",
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/wardbell/a2-in-memory-web-api#readme",
   "dependencies": {
-    "angular2": "2.0.0-beta.10",
+    "angular2": "2.0.0-beta.11",
     "es6-promise": "^3.0.2",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "0.1.2",
