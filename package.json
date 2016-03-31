@@ -1,6 +1,6 @@
 {
   "name": "a2-in-memory-web-api",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "An in-memory web api for demos and tests",
   "scripts": {
     "tsc": "tsc",
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/wardbell/a2-in-memory-web-api#readme",
   "dependencies": {
-    "angular2": "2.0.0-beta.12",
+    "angular2": "2.0.0-beta.13",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
@@ -48,10 +48,10 @@
     "lite-server": "^2.1.0",
     "live-server": "^0.9.2",
     "rimraf": "^2.5.2",
-    "systemjs": "0.19.24",
-    "systemjs-builder": "^0.15.13",
+    "systemjs": "0.19.25",
+    "systemjs-builder": "^0.15.14",
     "typescript": "^1.8.9",
-    "typings": "0.7.9",
+    "typings": "0.7.11",
     "yargs": "^4.3.2"
   }
 }
