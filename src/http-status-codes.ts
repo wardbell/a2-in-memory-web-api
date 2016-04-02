@@ -451,4 +451,4 @@ export let STATUS_CODE_INFO =
       "spec_title": "RFC6585#6",
       "spec_href": "http://tools.ietf.org/html/rfc6585#section-6"
     }
-  }
+  };

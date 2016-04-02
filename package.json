@@ -1,10 +1,11 @@
 {
   "name": "a2-in-memory-web-api",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "An in-memory web api for demos and tests",
   "scripts": {
     "tsc": "tsc",
     "tsc:w": "tsc -w",
+    "lint": "tslint ./src/in-memory-backend.service.ts -t verbose",
     "lite": "lite-server",
     "live": "live-server",
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",

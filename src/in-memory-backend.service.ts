@@ -1,5 +1,5 @@
 import { Inject, OpaqueToken, Optional } from 'angular2/core';
-import { BaseResponseOptions, Headers, Request, RequestMethod, Response, ResponseOptions, ResponseType } from 'angular2/http';
+import { BaseResponseOptions, Headers, Request, RequestMethod, Response, ResponseOptions } from 'angular2/http';
 import { Observable } from 'rxjs/Observable';
 import { Observer }   from 'rxjs/Observer';
 import 'rxjs/add/operator/delay';
@@ -25,7 +25,7 @@ export interface InMemoryDbService {
   * This condition allows InMemoryBackendService to morph the arrays and objects
   * without touching the original source data.
   */
-  createDb(): {}
+  createDb(): {};
 }
 
 /**
@@ -35,23 +35,23 @@ export interface InMemoryBackendConfigArgs {
   /**
    * default response options
    */
-  defaultResponseOptions?: ResponseOptions,
+  defaultResponseOptions?: ResponseOptions;
   /**
    * delay (in ms) to simulate latency
    */
-  delay?: number,
+  delay?: number;
   /**
    * false (default) if ok when object-to-delete not found; else 404
    */
-  delete404?: boolean
+  delete404?: boolean;
   /**
    * host for this service
    */
-  host?: string,
+  host?: string;
   /**
    * root path before any API call
    */
-  rootPath?: string
+  rootPath?: string;
 }
 
 /**
@@ -74,13 +74,13 @@ export class InMemoryBackendConfig implements InMemoryBackendConfigArgs {
 * extracted from an Http Request
 */
 export interface ReqInfo {
-  req: Request,
-  base: string,
-  collection: any[],
-  collectionName: string,
-  headers: Headers,
-  id: any,
-  resourceUrl: string
+  req: Request;
+  base: string;
+  collection: any[];
+  collectionName: string;
+  headers: Headers;
+  id: any;
+  resourceUrl: string;
 }
 
 export const isSuccess = (status: number): boolean => (status >= 200 && status < 300);
@@ -114,6 +114,7 @@ export const isSuccess = (status: number): boolean => (status >= 200 && status <
  * export class AppComponent { ... }
  * ```
  */
+
 export class InMemoryBackendService {
 
   protected _config: InMemoryBackendConfigArgs = new InMemoryBackendConfig();
@@ -168,15 +169,15 @@ export class InMemoryBackendService {
       base: base,
       collection: this._db[collectionName],
       collectionName: collectionName,
-      headers: new Headers({ "Content-Type": "application/json" }),
+      headers: new Headers({ 'Content-Type': 'application/json' }),
       id: this._parseId(id),
       resourceUrl: resourceUrl
-    }
+    };
 
     let options: ResponseOptions;
 
     try {
-      if ("commands" === reqInfo.base.toLowerCase()) {
+      if ('commands' === reqInfo.base.toLowerCase()) {
         options = this._commands(reqInfo);
 
       } else if (reqInfo.collection) {
@@ -194,12 +195,12 @@ export class InMemoryBackendService {
             options = this._delete(reqInfo);
             break;
           default:
-            options = this._createErrorResponse(STATUS.METHOD_NOT_ALLOWED, "Method not allowed");
+            options = this._createErrorResponse(STATUS.METHOD_NOT_ALLOWED, 'Method not allowed');
             break;
         }
 
       } else {
-        options = this._createErrorResponse(STATUS.NOT_FOUND, `Collection "${collectionName}" not found`);
+        options = this._createErrorResponse(STATUS.NOT_FOUND, `Collection '${collectionName}' not found`);
       }
 
     } catch (error) {
@@ -253,6 +254,7 @@ export class InMemoryBackendService {
           Object.assign(this._config, body);
           options = new ResponseOptions({ status: STATUS.NO_CONTENT });
         }
+        break;
       default:
         options = this._createErrorResponse(
           STATUS.INTERNAL_SERVER_ERROR, `Unknown command "${command}"`);
@@ -262,13 +264,13 @@ export class InMemoryBackendService {
 
   protected _createErrorResponse(status: number, message: string) {
     return new ResponseOptions({
-      body: { "error": `${message}` },
-      headers: new Headers({ "Content-Type": "application/json" }),
+      body: { 'error': `${message}` },
+      headers: new Headers({ 'Content-Type': 'application/json' }),
       status: status
     });
   }
 
-  protected _delete({id, collection, collectionName, headers, req}: ReqInfo) {
+  protected _delete({id, collection, collectionName, headers /*, req */}: ReqInfo) {
     if (!id) {
       return this._createErrorResponse(STATUS.NOT_FOUND, `Missing "${collectionName}" id`);
     }
@@ -296,7 +298,7 @@ export class InMemoryBackendService {
     let data = (id) ? this._findById(collection, id) : collection;
     if (!data) {
       return this._createErrorResponse(STATUS.NOT_FOUND,
-        `"${collectionName}" with id="${id}" not found`)
+        `'${collectionName}' with id='${id}' not found`);
     }
     return new ResponseOptions({
       body: { data: this._clone(data) },
@@ -306,7 +308,7 @@ export class InMemoryBackendService {
   }
 
   protected _getLocation(href: string) {
-    var l = document.createElement('a');
+    let l = document.createElement('a');
     l.href = href;
     return l;
   };
@@ -335,16 +337,16 @@ export class InMemoryBackendService {
       }
       let path = loc.pathname.substring(drop);
       let [base, collectionName, id] = path.split('/');
-      let resourceUrl = urlRoot + base+ '/'  + collectionName + '/';
+      let resourceUrl = urlRoot + base + '/' + collectionName + '/';
       [collectionName] = collectionName.split('.'); // ignore anything after the '.', e.g., '.json'
       return { base, id, collectionName, resourceUrl };
     } catch (err) {
-      let msg = `unable to parse url "${url}"; original error: ${err.message}`
+      let msg = `unable to parse url '${url}'; original error: ${err.message}`;
       throw new Error(msg);
     }
   }
 
-  protected _post({collection, collectionName, headers, id, req, resourceUrl}: ReqInfo) {
+  protected _post({collection, /* collectionName, */ headers, id, req, resourceUrl}: ReqInfo) {
     let item = JSON.parse(<string>req.text());
     if (!item.id) {
       item.id = id || this._genId(collection);
@@ -361,7 +363,7 @@ export class InMemoryBackendService {
       });
     } else {
       collection.push(item);
-      headers.set('Location', resourceUrl + '/' + id)
+      headers.set('Location', resourceUrl + '/' + id);
       return new ResponseOptions({
         headers: headers,
         body: { data: this._clone(item) },
@@ -373,7 +375,7 @@ export class InMemoryBackendService {
   protected _put({id, collection, collectionName, headers, req}: ReqInfo) {
     let item = JSON.parse(<string>req.text());
     if (!id) {
-      return this._createErrorResponse(STATUS.NOT_FOUND, `Missing "${collectionName}" id`);
+      return this._createErrorResponse(STATUS.NOT_FOUND, `Missing '${collectionName}' id`);
     }
     if (id !== item.id) {
       return this._createErrorResponse(STATUS.BAD_REQUEST,
