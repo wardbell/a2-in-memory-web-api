@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/wardbell/a2-in-memory-web-api#readme",
   "dependencies": {
-    "angular2": "2.0.0-beta.13",
+    "angular2": "2.0.0-beta.14",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",

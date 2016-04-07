@@ -127,13 +127,13 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/add/
                         base: base,
                         collection: this._db[collectionName],
                         collectionName: collectionName,
-                        headers: new http_1.Headers({ "Content-Type": "application/json" }),
+                        headers: new http_1.Headers({ 'Content-Type': 'application/json' }),
                         id: this._parseId(id),
                         resourceUrl: resourceUrl
                     };
                     var options;
                     try {
-                        if ("commands" === reqInfo.base.toLowerCase()) {
+                        if ('commands' === reqInfo.base.toLowerCase()) {
                             options = this._commands(reqInfo);
                         }
                         else if (reqInfo.collection) {
@@ -151,12 +151,12 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/add/
                                     options = this._delete(reqInfo);
                                     break;
                                 default:
-                                    options = this._createErrorResponse(http_status_codes_1.STATUS.METHOD_NOT_ALLOWED, "Method not allowed");
+                                    options = this._createErrorResponse(http_status_codes_1.STATUS.METHOD_NOT_ALLOWED, 'Method not allowed');
                                     break;
                             }
                         }
                         else {
-                            options = this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "Collection \"" + collectionName + "\" not found");
+                            options = this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "Collection '" + collectionName + "' not found");
                         }
                     }
                     catch (error) {
@@ -206,6 +206,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/add/
                                 Object.assign(this._config, body);
                                 options = new http_1.ResponseOptions({ status: http_status_codes_1.STATUS.NO_CONTENT });
                             }
+                            break;
                         default:
                             options = this._createErrorResponse(http_status_codes_1.STATUS.INTERNAL_SERVER_ERROR, "Unknown command \"" + command + "\"");
                     }
@@ -213,13 +214,13 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/add/
                 };
                 InMemoryBackendService.prototype._createErrorResponse = function (status, message) {
                     return new http_1.ResponseOptions({
-                        body: { "error": "" + message },
-                        headers: new http_1.Headers({ "Content-Type": "application/json" }),
+                        body: { 'error': "" + message },
+                        headers: new http_1.Headers({ 'Content-Type': 'application/json' }),
                         status: status
                     });
                 };
                 InMemoryBackendService.prototype._delete = function (_a) {
-                    var id = _a.id, collection = _a.collection, collectionName = _a.collectionName, headers = _a.headers, req = _a.req;
+                    var id = _a.id, collection = _a.collection, collectionName = _a.collectionName, headers = _a.headers;
                     if (!id) {
                         return this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "Missing \"" + collectionName + "\" id");
                     }
@@ -244,7 +245,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/add/
                     var id = _a.id, collection = _a.collection, collectionName = _a.collectionName, headers = _a.headers;
                     var data = (id) ? this._findById(collection, id) : collection;
                     if (!data) {
-                        return this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "\"" + collectionName + "\" with id=\"" + id + "\" not found");
+                        return this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "'" + collectionName + "' with id='" + id + "' not found");
                     }
                     return new http_1.ResponseOptions({
                         body: { data: this._clone(data) },
@@ -287,12 +288,12 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/add/
                         return { base: base, id: id, collectionName: collectionName, resourceUrl: resourceUrl };
                     }
                     catch (err) {
-                        var msg = "unable to parse url \"" + url + "\"; original error: " + err.message;
+                        var msg = "unable to parse url '" + url + "'; original error: " + err.message;
                         throw new Error(msg);
                     }
                 };
                 InMemoryBackendService.prototype._post = function (_a) {
-                    var collection = _a.collection, collectionName = _a.collectionName, headers = _a.headers, id = _a.id, req = _a.req, resourceUrl = _a.resourceUrl;
+                    var collection = _a.collection, headers = _a.headers, id = _a.id, req = _a.req, resourceUrl = _a.resourceUrl;
                     var item = JSON.parse(req.text());
                     if (!item.id) {
                         item.id = id || this._genId(collection);
@@ -322,7 +323,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Observable', 'rxjs/add/
                     var id = _a.id, collection = _a.collection, collectionName = _a.collectionName, headers = _a.headers, req = _a.req;
                     var item = JSON.parse(req.text());
                     if (!id) {
-                        return this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "Missing \"" + collectionName + "\" id");
+                        return this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "Missing '" + collectionName + "' id");
                     }
                     if (id !== item.id) {
                         return this._createErrorResponse(http_status_codes_1.STATUS.BAD_REQUEST, "\"" + collectionName + "\" id does not match item.id");

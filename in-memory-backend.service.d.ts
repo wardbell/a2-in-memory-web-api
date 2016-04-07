@@ -133,7 +133,7 @@ export declare class InMemoryBackendService {
      */
     protected _commands(reqInfo: ReqInfo): ResponseOptions;
     protected _createErrorResponse(status: number, message: string): ResponseOptions;
-    protected _delete({id, collection, collectionName, headers, req}: ReqInfo): ResponseOptions;
+    protected _delete({id, collection, collectionName, headers}: ReqInfo): ResponseOptions;
     protected _findById(collection: any[], id: number): any;
     protected _genId(collection: any): any;
     protected _get({id, collection, collectionName, headers}: ReqInfo): ResponseOptions;
@@ -146,7 +146,7 @@ export declare class InMemoryBackendService {
         collectionName: string;
         resourceUrl: string;
     };
-    protected _post({collection, collectionName, headers, id, req, resourceUrl}: ReqInfo): ResponseOptions;
+    protected _post({collection, headers, id, req, resourceUrl}: ReqInfo): ResponseOptions;
     protected _put({id, collection, collectionName, headers, req}: ReqInfo): ResponseOptions;
     protected _removeById(collection: any[], id: number): boolean;
     /**

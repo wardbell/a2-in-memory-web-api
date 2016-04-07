@@ -94,13 +94,13 @@ System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/cor
             base: base,
             collection: this._db[collectionName],
             collectionName: collectionName,
-            headers: new http_1.Headers({"Content-Type": "application/json"}),
+            headers: new http_1.Headers({'Content-Type': 'application/json'}),
             id: this._parseId(id),
             resourceUrl: resourceUrl
           };
           var options;
           try {
-            if ("commands" === reqInfo.base.toLowerCase()) {
+            if ('commands' === reqInfo.base.toLowerCase()) {
               options = this._commands(reqInfo);
             } else if (reqInfo.collection) {
               switch (req.method) {
@@ -117,11 +117,11 @@ System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/cor
                   options = this._delete(reqInfo);
                   break;
                 default:
-                  options = this._createErrorResponse(http_status_codes_1.STATUS.METHOD_NOT_ALLOWED, "Method not allowed");
+                  options = this._createErrorResponse(http_status_codes_1.STATUS.METHOD_NOT_ALLOWED, 'Method not allowed');
                   break;
               }
             } else {
-              options = this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "Collection \"" + collectionName + "\" not found");
+              options = this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "Collection '" + collectionName + "' not found");
             }
           } catch (error) {
             var err = error.message || error;
@@ -156,6 +156,7 @@ System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/cor
                 Object.assign(this._config, body);
                 options = new http_1.ResponseOptions({status: http_status_codes_1.STATUS.NO_CONTENT});
               }
+              break;
             default:
               options = this._createErrorResponse(http_status_codes_1.STATUS.INTERNAL_SERVER_ERROR, "Unknown command \"" + command + "\"");
           }
@@ -163,8 +164,8 @@ System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/cor
         };
         InMemoryBackendService.prototype._createErrorResponse = function(status, message) {
           return new http_1.ResponseOptions({
-            body: {"error": "" + message},
-            headers: new http_1.Headers({"Content-Type": "application/json"}),
+            body: {'error': "" + message},
+            headers: new http_1.Headers({'Content-Type': 'application/json'}),
             status: status
           });
         };
@@ -172,8 +173,7 @@ System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/cor
           var id = _a.id,
               collection = _a.collection,
               collectionName = _a.collectionName,
-              headers = _a.headers,
-              req = _a.req;
+              headers = _a.headers;
           if (!id) {
             return this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "Missing \"" + collectionName + "\" id");
           }
@@ -202,7 +202,7 @@ System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/cor
               headers = _a.headers;
           var data = (id) ? this._findById(collection, id) : collection;
           if (!data) {
-            return this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "\"" + collectionName + "\" with id=\"" + id + "\" not found");
+            return this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "'" + collectionName + "' with id='" + id + "' not found");
           }
           return new http_1.ResponseOptions({
             body: {data: this._clone(data)},
@@ -251,13 +251,12 @@ System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/cor
               resourceUrl: resourceUrl
             };
           } catch (err) {
-            var msg = "unable to parse url \"" + url + "\"; original error: " + err.message;
+            var msg = "unable to parse url '" + url + "'; original error: " + err.message;
             throw new Error(msg);
           }
         };
         InMemoryBackendService.prototype._post = function(_a) {
           var collection = _a.collection,
-              collectionName = _a.collectionName,
               headers = _a.headers,
               id = _a.id,
               req = _a.req,
@@ -292,7 +291,7 @@ System.register("a2-in-memory-web-api/in-memory-backend.service", ["angular2/cor
               req = _a.req;
           var item = JSON.parse(req.text());
           if (!id) {
-            return this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "Missing \"" + collectionName + "\" id");
+            return this._createErrorResponse(http_status_codes_1.STATUS.NOT_FOUND, "Missing '" + collectionName + "' id");
           }
           if (id !== item.id) {
             return this._createErrorResponse(http_status_codes_1.STATUS.BAD_REQUEST, "\"" + collectionName + "\" id does not match item.id");
