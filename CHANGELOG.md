@@ -1,15 +1,21 @@
+<a name="0.1.17"></a>
+# 0.1.17 (2016-04-29)
+* update packages
+  * Angular 2 beta 17
+  * RxJs 5.0.0-beta.6
+
 <a name="0.1.16"></a>
 # 0.1.16 (2016-04-25)
 * update packages
   * Angular 2 beta 16
   * zone.js 0.6.12
-  
+
 <a name="0.1.15"></a>
 # 0.1.15 (2016-04-13)
 * update packages
   * Angular 2 beta 15
   * zone.js 0.6.10
-  
+
 <a name="0.1.14"></a>
 # 0.1.14 (2016-04-07)
 * update packages
