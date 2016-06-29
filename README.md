@@ -1,8 +1,8 @@
 # angular2-in-memory-web-api (DEPRECATED)
 
-** Deprecated in favor of the angular repo: https://github.com/angular/in-memory-web-api**
+**Deprecated in favor of the angular repo: https://github.com/angular/in-memory-web-api**
 
-** Way out of date and no longer maintained **
+**Way out of date and no longer maintained **
 
 An in-memory web api for Angular 2 demos and tests.
 
